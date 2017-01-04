@@ -25,8 +25,11 @@ O(1) space
 '''
 
 def last_word_length(s):
+	# create array splitting at ' '
 	word_array = s.split(' ')
+	# create new array for words with no spaces; account for multiple ' '
 	no_spaces = [word for word in word_array if word != ' ']
+	# if there exists words then return last indexed word
 	if len(no_spaces) > 0:
 		return len(no_spaces[-1])
 	else :
