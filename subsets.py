@@ -24,12 +24,13 @@ O(n) space
 
 def subsets(nums):
 	arr = []
+  arr.append([])
 	for i in range(0, len(nums)-1):
 		temp = []
 		for j in range (i+1, len(nums)+1):
 			arr.append(nums[i:j])
-	arr.append([])
 	return arr
+
 
 if __name__ == '__main__':
   print subsets([1,2,3])
