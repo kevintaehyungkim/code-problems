@@ -15,7 +15,7 @@ Space: O(1)
 
 # one line Solution
 def contains_duplicates(nums):
-	return len(nums) != len(set(nums))
+	return len(nums) > len(set(nums))
 
 # hash_map Solution
 def contains_duplicates(nums):
