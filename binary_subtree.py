@@ -18,7 +18,7 @@ def contains_tree(r1, r2):
 	elif r1.val == r2.val and same_tree(r1,r2):
 		return True
 	else:
-		return binary_subtree(r1.left, r2) or binary_subtree(r1.right, r2)
+		return contains_tree(r1.left, r2) or contains_tree(r1.right, r2)
 
 
 def same_tree(node1, node2):
