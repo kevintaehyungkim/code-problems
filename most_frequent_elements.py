@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Given a non-empty array of integers, return the k most frequent elements.
 
@@ -18,8 +19,22 @@ O(nlogn) time
 O(1) space
 '''
 
-def most_frequent(nums, k):
+# most frequent k elements
+# def most_frequent(nums, k):
+# 	elements = {}
+# 	for num in nums:
+# 		elements[num] = elements.get(num, 0) + 1
+# 	return sorted(elements, key=elements.get, reverse=True)[:k]
+
+# most frequent elements
+def most_frequent(nums):
 	elements = {}
 	for num in nums:
 		elements[num] = elements.get(num, 0) + 1
-	return sorted(elements, key=elements.get, reverse=True)[:k]
+	return max(elements, key = elements.get)
+
+
+
+
+if __name__ == '__main__':
+	print most_frequent([1,1,1,2,2,3])

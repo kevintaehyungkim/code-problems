@@ -15,7 +15,7 @@ def generate_parenthesis(self, n):
 
 
 def create_combinations(self, res, left, right, curr=""):
-	if left == 0 and not right == 0:
+	if left == 0 and right == 0:
 		res.append(curr)
 	else:
 		if left > 0:

@@ -27,3 +27,12 @@ def invert_bin_tree(root):
 		root.left, root.right = invert_bin_tree(root.right), invert_bin_tree(root.left)
 	return root
 
+
+def invertTree(self, root):
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        if node:
+            node.left, node.right = node.right, node.left
+            stack += node.left, node.right
+    return root

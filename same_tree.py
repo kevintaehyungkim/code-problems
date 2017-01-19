@@ -9,10 +9,10 @@ O(n) time
 O(1) space
 '''
 
-def same_tree(p, q):
-	if not p and not q:
+def same_tree(t1, t2):
+	if not t1 and not t2:
 		return True
-	elif p and q and p.val == q.val:
-		return same_tree(p.left, q.left) and same_tree(p.right, q.right)
+	elif t1 and t2 and t1.val == t2.val:
+		return same_tree(t1.left, t2.left) and same_tree(t1.right, t2.right)
 	else:
 		return False

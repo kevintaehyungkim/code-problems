@@ -20,10 +20,11 @@ O(n) time
 O(1) space
 '''
 
-def path_sum (root, sum):
+def path_sum (root, k):
 	if root == null:
 		return False
 	if root.left == null and root.right == null:
-		return sum == root.val
+		return k == root.val
 	else:
-		return path_sum(root.left, sum-root.val) or path_sum(root.right, sum-root.val)
+		return path_sum(root.left, k-root.val) or path_sum(root.right, k-root.val)
+
