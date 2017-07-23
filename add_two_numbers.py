@@ -24,6 +24,7 @@ def add_two_numbers(head1, head2):
 		output.val = output.val + val1 + val2
 		if output.val > 10:
 			output.next = ListNode(1)
+			output.val -= 10
 		else:
 			output.next = ListNode(0)
 		output = output.next
