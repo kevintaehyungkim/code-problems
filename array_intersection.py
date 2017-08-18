@@ -11,5 +11,6 @@ The result can be in any order.
 Difficulty: Easy
 '''
 
+# have to insert an array for set
 def array_intersection(arr1, arr2):
 	return list(set([i for i in arr1 if i in arr2]))

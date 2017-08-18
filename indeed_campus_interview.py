@@ -8,7 +8,7 @@ def truncate_string(s):
 	if len(s) <= 10:
 		return s
 	elif s[index] == ' ':
-		return s[:index+1]
+		return s[:index]
 	else:
 		while s[index] != ' ':
 			index -= 1

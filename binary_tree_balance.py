@@ -6,7 +6,12 @@ differ by more than one.
 '''
 
 def is_balanced(node):
-	return get_height(node.left) == get_height(node.right)
+	if not node:
+		return True
+	if get_height(node.left) == get_height(node.right):
+		return is_balanced(root.left) and is_balanced(root.right)
+	else:
+		return False
 
 def get_height(node):
 	if not node:

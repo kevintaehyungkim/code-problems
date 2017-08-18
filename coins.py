@@ -1,7 +1,7 @@
 '''
 Cracking the Coding Interview
 8.11: Given an infinite number of quarters, dimes, nickels, and pennies, write 
-code to calclate the number of ways of representing n cents.
+code to calculate the number of ways of representing n cents.
 '''
 # Memoization
 def coins(n):

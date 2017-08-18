@@ -21,7 +21,7 @@ O(1) space
 '''
 
 def path_sum (root, k):
-	if root == null:
+	if root == null or k < 0:
 		return False
 	if root.left == null and root.right == null:
 		return k == root.val

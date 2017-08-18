@@ -15,26 +15,26 @@
  
  Design a generic deck of cards which can be used for different games - Poker, Blackjack etc. 
  What are the classes that you will need? Data members/functions.
- (Object oriented principles)      
+ (Object oriented principles)     
  
 Class Card:
-variables: my_number (int)  
+variables: my_number (int)
            my_type (String)
-      
-Class Deck:             
-array that holds Card objects 
+     
+Class Deck:         
+array that holds Card objects
 functions -
 put buttom: index 0
-draw: index len(arr) -1 
+draw: index len(arr) -1
 push or pop
 
 
-Dictionary of words. Pattern. We need to find all teh words in the dictionary that match the given pattern.
+Dictionary of words. Pattern. We need to find all the words in the dictionary that match the given pattern.
 
 Dictionary: [‘ABC’ , ‘AMM’, ‘MNN’, ‘AQA’]
-Pattern: ['ABB']
+Pattern: 'ABB'
 pattern mnm
-ABC => [0 1 2] [A, B, C] 
+ABC => [0 1 2] [A, B, C]
 
 AQA = 121
 ABB = 122
@@ -45,38 +45,37 @@ def find_pattern (my_dict, pattern):
     if len(pattern) == 0: 
         return False
 
+    result = []
+
     pattern_array = []
     num_letters = 0
     letter_dict = {}
-    for i in range (0,len(pattern)-1):
-        letter = pattern[i:i+1]
-        if letter in pattern_array:
+
+    for letter in pattern:
+        if letter in letter_dict.keys():
             pattern_array.append(letter_dict[letter])
         else:
             pattern_array.append(num_letters)
-            num_letters += 1
             letter_dict[letter] = num_letters
+            num_letters += 1
 
-    entry_array = []
     for entry in my_dict:
         if len(entry) != len(pattern):
-            return False
+            continue
         entry_array = []
         letters_used = 0
         entry_dict = {}
-        for i in range (0,len(entry)-1):
-            letter = entry[i:i+1]
-            if letter in entry_array:
-                entry_array.append(letter_dict[letter])
+        for letter in entry:
+            if letter in entry_dict.keys():
+                entry_array.append(entry_dict[letter])
             else:
                 entry_array.append(letters_used)
-                letters_used += 1
                 entry_dict[letter] = letters_used
+                letters_used += 1
         if pattern_array == entry_array:
-            return True
+            result.append(entry)
             
-    return False
-
+    return result
 
 
 if __name__ == '__main__':

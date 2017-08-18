@@ -19,10 +19,16 @@ O(1) space
 def is_anagram(s,t):
 	letter_dict = {}
 	for letter in s:
-		letter_dict[letter] = letter_dict[letter] + 1
+		if letter in letter_dict:
+			letter_dict[letter] = letter_dict[letter] + 1
+		else:
+			letter_dict[letter] = 1
 	for letter in t:
 		letter_dict[letter] = letter_dict[letter] - 1 
 	for val in letter_dict.values():
 		if val != 0:
 			return False 
 	return True
+
+if __name__ == '__main__':
+  print is_anagram("anagram", "nagaram")

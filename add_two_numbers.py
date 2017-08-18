@@ -19,18 +19,15 @@ def add_two_numbers(head1, head2):
 		val1 = val2 = 0
 		if head1:
 			val1 = head1.val
+			head1 = head1.next
 		if head2:
 			val2 = head2.val
+			head2 = head2.next
 		output.val = output.val + val1 + val2
-		if output.val > 10:
+		if output.val >= 10:
 			output.next = ListNode(1)
+			output.val -= 10
 		else:
 			output.next = ListNode(0)
 		output = output.next
 	return result
-
-
-
-
-
-

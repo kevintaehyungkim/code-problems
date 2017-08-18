@@ -8,12 +8,12 @@ O(n*n!) time
 O(1) space
 '''
 
-def string_permutation(string, prefix = ''):
+def permutation(string, prefix = ''):
 	if len(string) == 0:
 		print prefix
 	else:
 		for s in string:
-			string_permutation(string[:string.index(s)]+string[string.index(s)+1:], prefix + s)
+			permutation(string[:string.index(s)]+string[string.index(s)+1:], prefix + s)
 
 
 
